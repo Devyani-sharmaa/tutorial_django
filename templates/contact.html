@@ -1,0 +1,53 @@
+{% extends "home.html" %}
+
+
+{% block xy %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+    <link href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    
+    <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width">
+    <div  class="wrapper">
+        <div style="    padding-left: 15%;
+        color: brown;
+    " class="container">
+          
+          <h1>Contact Us</h1>
+          <div class="thanks"><p>We'll be in touch soon,</p> </div>
+            <div class="pen"></div>
+
+
+             
+        <form action=""     id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+            <div class="row">
+                <label for="name">Your name:</label><br />
+            
+              <div class="inputwrap"><input id="name" class="input" name="name" type="text" value="" size="30" placeholder="enter ur name" name="fname"></input><div class="bar"></div></div<br />
+            
+            </div>
+            <div class="row">
+                <label for="email">Your email:</label><br /><div class="inputwrap">
+                <input id="email" class="input" name="email" type="text" value="" size="30" name="email" />
+            <div class="bar"></div></div>
+            <br />
+            </div>
+            <div class="row">
+                <label for="message">Your message:</label><br />
+                <div class="inputwrap"><input type="textarea" /><div class="bar" name="msg"></div></div<br />
+            </div>
+          <div style="text-align: center;" class="btnwrap"><input id="submit_button" type="submit" value="submit" placeholder="enter msg" /></div>
+        </form>			
+        </div>
+        
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+{% endblock xy %}
