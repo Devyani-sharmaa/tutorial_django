@@ -9,8 +9,10 @@ def myhome(request):
     return render(request,"home.html")
 
 def aboutpage(request):
+    y=contactUs.objects.all()
+    print(y)
    # return HttpResponse("THIS IS ABOUT PAGE ")
-    return render(request,"about.html")
+    return render(request,"about.html",{"my_data":y})
 
 def servicepage(request):
     return render(request,"services.html")
@@ -29,8 +31,19 @@ def savedata(request):
     data.save()
 
     return redirect('x')
-    return HttpResponse("DATA IS SAVA SUCESS")
+    
 
 
+def deletefata(request, x):
+    q = contactUs.objects.get(id = x)
+    q.delete()
+    return redirect('y')
+    # return HttpResponse("DATA IS delete SUCESS")
+    # pass
+
+def updatedata(request,u):
+    p=contactUs.objects.get(id=u)
+    p.update()
+    return redirect("y")
 
 #blog----home,about,contact,services

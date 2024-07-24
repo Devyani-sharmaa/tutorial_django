@@ -3,8 +3,10 @@ from user import views
 
 urlpatterns = [
     path("home", views.myhome),
-    path("about",views.aboutpage),
+    path("about",views.aboutpage, name="y"),
     path("services",views.servicepage),
     path("contact",views.contactpage, name='x'),
-    path("savedata",views.savedata)
+    path("savedata",views.savedata),
+    path("delte-record/<int:x>",views.deletefata),
+    path("update-record/<int:u>",views.updatedata)
 ]
