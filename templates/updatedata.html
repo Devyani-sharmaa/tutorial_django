@@ -23,30 +23,25 @@
 
 
              
-        <form action="/user/savedata"  method="post"   enctype="multipart/form-data">
+        <form action="/user/updatedata/{{record.id}}"  method="post">
             {% csrf_token %}
+            {{record.email}}
             <div class="row">
                 <label for="name">Your name:</label><br />
             
-              <div class="inputwrap"><input id="name" class="input" type="text" value="" size="30" placeholder="enter ur name" name="fname"></input><div class="bar"></div></div<br />
+              <div class="inputwrap"><input id="name" class="input" type="text" value="{{record.fullname}}" size="30" placeholder="enter ur name" name="fname"></input><div class="bar"></div></div><br />
             
             </div>
             <div class="row">
                 <label for="email">Your email:</label><br /><div class="inputwrap">
-                <input id="email" class="input"  type="text" value="" size="30" name="email" />
+                <input id="email" class="input"  type="text" value="{{record.email}}" size="30" name="email" />
             <div class="bar"></div></div>
             <br />
             </div>
             <div class="row">
                 <label for="message">Your message:</label><br />
-                <div class="inputwrap"><input type="textarea" name="msg"/><div class="bar" ></div></div<br />
+                <div class="inputwrap"><input type="textarea" name="msg"/><div class="bar"  value={{record.msg}}></div></div<br />
             </div>
-
-        </div>
-        <div class="row">
-            <label for="message">upload image</label><br />
-            <div class="inputwrap"><input type="file" name="myimg"/><div class="bar" ></div></div<br />
-        </div>
           <div style="text-align: center;" class="btnwrap"><input id="submit_button" type="submit" value="submit" placeholder="enter msg" /></div>
         </form>			
         </div>

@@ -26,8 +26,9 @@ def savedata(request):
         fullname=request.POST.get('fname')
         email=request.POST.get('email')
         msg=request.POST.get("msg")
+        img=request.FILES.get("myimg")
        # print(fullname,email,msg)
-    data=contactUs( fullname= fullname, email=email,message=msg)
+    data=contactUs( fullname= fullname, email=email,message=msg,saveimg=img)
     data.save()
 
     return redirect('x')
@@ -41,9 +42,25 @@ def deletefata(request, x):
     # return HttpResponse("DATA IS delete SUCESS")
     # pass
 
-def updatedata(request,u):
-    p=contactUs.objects.get(id=u)
-    p.update()
+def updatedata(request,abc):
+    obj=contactUs.objects.get(id=abc)
+    return render(request,"updatedata.html",{"record":obj})
     return redirect("y")
+
+def datarecord(request,abc):
+    obj=contactUs.objects.get(id=abc)
+    if request.method=="POST":
+        fullname=request.POST.get('fname')
+        email=request.POST.get('email')
+        msg=request.POST.get("msg")
+
+       #objname.coliumn=new_data 
+        obj.fullname=fullname
+        obj.email=email
+        obj. message=msg
+
+        obj.save()
+    return redirect("y")
+
 
 #blog----home,about,contact,services

@@ -8,5 +8,6 @@ urlpatterns = [
     path("contact",views.contactpage, name='x'),
     path("savedata",views.savedata),
     path("delte-record/<int:x>",views.deletefata),
-    path("update-record/<int:u>",views.updatedata)
-]
+    path("update-record/<int:abc>",views.updatedata),
+    path("updatedata/<int:abc>",views.datarecord)
+]   

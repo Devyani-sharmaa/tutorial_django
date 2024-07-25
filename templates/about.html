@@ -12,6 +12,7 @@
 	  <tr>
 		<th scope="col">#</th>
 		<th scope="col">Fullname</th>
+		<th scope="col">image</th>
 		<th scope="col">email</th>
 		<th scope="col">message</th>
 		<th scope="col">Action </th>
@@ -23,12 +24,14 @@
 	  <tr>
 		<th scope="row">{{x.id}}</th>
 		<td>{{x.fullname}}</td>
+		<td><img src="/media/{{x.saveimg}}"></td>
 		<td>{{x.email}}</td>
 		<td>{{x.message}}</td>
+		
 		<td>
 			<div>
 				<a href="delte-record/{{x.id}}"><button type="button" class="btn btn-danger">Delete</button></a>
-				<a href="update-record/{{u.id}}"><button type="button" class="btn btn-success">Update</button></a>
+				<a href="update-record/{{x.id}}"><button type="button" class="btn btn-success">Update</button></a>
 			</div>
 		</td>
 
