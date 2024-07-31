@@ -63,4 +63,16 @@ def datarecord(request,abc):
     return redirect("y")
 
 
+def searching(request):
+    #pass
+    query=request.GET.get("q")
+   #ORM WO DATA JO SEARCH HO RHA
+    #MODEL NAME(modals wali file se).OBJECTS.FILTR
+    if query:
+        xyz=contactUs.objects.filter(fullname__icontains=query) | contactUs.objects.filter( email__icontains=query)
+        return  render(request,"about.html", {"my_data":xyz})
+
+    else:
+        all_records=contactUs.objects.all()
+        return render(request,"about.html",{"my_data":all_records})
 #blog----home,about,contact,services

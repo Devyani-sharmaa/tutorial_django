@@ -9,5 +9,6 @@ urlpatterns = [
     path("savedata",views.savedata),
     path("delte-record/<int:x>",views.deletefata),
     path("update-record/<int:abc>",views.updatedata),
-    path("updatedata/<int:abc>",views.datarecord)
+    path("updatedata/<int:abc>",views.datarecord),
+     path("search-record",views.searching)
 ]   
